@@ -1,5 +1,4 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
@@ -12,8 +11,8 @@ namespace ReportBuilder
     public partial class ReportBuilder : Component
     {
         public readonly int InstanceId;
-        private static int _nextInstanceId = 0;
-        private static long _classInstanceCount = 0;
+        private static int _nextInstanceId;
+        private static long _classInstanceCount;
 
         private readonly string _path;
         private readonly List<Product> _products;
@@ -33,7 +32,7 @@ namespace ReportBuilder
 
         public void Generate()
         {
-            var products = _products.OrderBy(p => p.Price);
+            var products = _products.OrderByDescending(p => p.Price);
             var doc = new PdfDocument();
             PdfWriter.GetInstance(doc, new FileStream(_path, FileMode.Create));
             doc.Open();
@@ -46,9 +45,11 @@ namespace ReportBuilder
 
         private void WriteHeader(PdfDocument doc)
         {
-            var header = new Paragraph(new Phrase("Отчет по остатку товара"));
-            header.Alignment = Element.ALIGN_CENTER;
-            header.Font.Size = 18;
+            var header = new Paragraph(new Phrase("Отчет по остатку товара"))
+            {
+                Alignment = Element.ALIGN_CENTER,
+                Font = {Size = 18}
+            };
             doc.Add(header);
         }
 

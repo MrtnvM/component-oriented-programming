@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Computer Accounting", "Computer Accounting\Computer Accounting.csproj", "{D80878C8-6C59-498F-A74F-8721657297C7}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ReportBuilder", "ReportBuilder\ReportBuilder.csproj", "{A6AAD157-B09B-4EA3-9859-098C5F9A293A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{54512D0D-ADE7-47E5-8377-A29C04B3CD3D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D80878C8-6C59-498F-A74F-8721657297C7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D80878C8-6C59-498F-A74F-8721657297C7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D80878C8-6C59-498F-A74F-8721657297C7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D80878C8-6C59-498F-A74F-8721657297C7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A6AAD157-B09B-4EA3-9859-098C5F9A293A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A6AAD157-B09B-4EA3-9859-098C5F9A293A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A6AAD157-B09B-4EA3-9859-098C5F9A293A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A6AAD157-B09B-4EA3-9859-098C5F9A293A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{54512D0D-ADE7-47E5-8377-A29C04B3CD3D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{54512D0D-ADE7-47E5-8377-A29C04B3CD3D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{54512D0D-ADE7-47E5-8377-A29C04B3CD3D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{54512D0D-ADE7-47E5-8377-A29C04B3CD3D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

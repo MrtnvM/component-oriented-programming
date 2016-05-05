@@ -44,19 +44,15 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ProductDataConverter.cs" />
+    <Compile Include="Product.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="ReportBuilder.cs">
+    <Compile Include="ProductReportBuilder.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="ReportBuilder.Designer.cs">
-      <DependentUpon>ReportBuilder.cs</DependentUpon>
+    <Compile Include="ProductReportBuilder.Designer.cs">
+      <DependentUpon>ProductReportBuilder.cs</DependentUpon>
     </Compile>
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Models\Models.csproj">
-      <Project>{54512d0d-ade7-47e5-8377-a29c04b3cd3d}</Project>
-      <Name>Models</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

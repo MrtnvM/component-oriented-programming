@@ -1,14 +1,14 @@
-﻿using System.Collections.Generic;
+﻿using System.Collections;
+using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using iTextSharp.text;
-using Models;
 using iTextSharp.text.pdf;
 
 namespace ReportBuilder
 {
-    public partial class ReportBuilder : Component
+    public partial class ProductReportBuilder : Component
     {
         public readonly int InstanceId;
         private static int _nextInstanceId;
@@ -19,7 +19,8 @@ namespace ReportBuilder
 
         public long IstanceCount => _classInstanceCount;
 
-        public ReportBuilder(IEnumerable<Product> products, string path)
+        public ProductReportBuilder(ProductDataConverter converter, 
+            IEnumerable models, string path)
         {
             InitializeComponent();
 
@@ -27,20 +28,22 @@ namespace ReportBuilder
             _classInstanceCount++;
 
             _path = path;
-            _products = products.ToList();
+            _products = converter.ConvertToProducts(models).ToList();
         }
 
         public void Generate()
         {
             var products = _products.OrderByDescending(p => p.Price);
             var doc = new PdfDocument();
-            PdfWriter.GetInstance(doc, new FileStream(_path, FileMode.Create));
+            var file = new FileStream(_path, FileMode.OpenOrCreate, FileAccess.ReadWrite);
+            var writer = PdfWriter.GetInstance(doc, file);
             doc.Open();
 
             WriteHeader(doc);
             WriteReport(doc, products);
 
             doc.Close();
+            file.Close();
         }
 
         private void WriteHeader(PdfDocument doc)
@@ -84,7 +87,7 @@ namespace ReportBuilder
             }
         }
 
-        ~ReportBuilder()
+        ~ProductReportBuilder()
         {
             _classInstanceCount--;
         }

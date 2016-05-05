@@ -1,12 +1,23 @@
-﻿<Window x:Class="Computer_Accounting.MainWindow"
+﻿<Window
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Computer_Accounting"
+        xmlns:ProductList="clr-namespace:ProductList;assembly=ProductList" x:Class="Computer_Accounting.MainWindow"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MaxOffice. Учет компьтеров" Height="512.791" Width="700">
     <Grid>
-        
+        <ProductList:ProductDetailList x:Name="ProductContainer" HorizontalAlignment="Left" Height="347" Margin="9,86,0,0" VerticalAlignment="Top" Width="672" BorderThickness="1">
+            <ProductList:ProductDetailList.Effect>
+                <DropShadowEffect/>
+            </ProductList:ProductDetailList.Effect>
+        </ProductList:ProductDetailList>
+        <Label x:Name="label1" Content="Компьютеры в наличии:" Height="28" Margin="10,53,10,401" FontWeight="Bold" FontSize="14.667"/>
+        <Button x:Name="btnAddNew" Content="Добавить на склад" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="215" Height="32"/>
+        <Button x:Name="btnSell" Content="Оформить продажу" HorizontalAlignment="Left" Margin="467,10,0,0" VerticalAlignment="Top" Width="215" RenderTransformOrigin="0.043,-0.483" Height="32"/>
+        <Button x:Name="btnMakeBackup" Content="Выгрузить данные" HorizontalAlignment="Left" Margin="10,438,0,0" VerticalAlignment="Top" Width="193" Height="34"/>
+        <Button x:Name="btnLoadBackup" Content="Загруить данные" HorizontalAlignment="Left" Margin="489,438,0,0" VerticalAlignment="Top" Width="193" Height="34"/>
+        <Button x:Name="btnMakeReport" Content="Сформировать отчет" HorizontalAlignment="Left" Margin="238,10,0,0" VerticalAlignment="Top" Width="215" RenderTransformOrigin="0.043,-0.483" Height="32" Click="btnMakeReport_Click"/>
     </Grid>
 </Window>

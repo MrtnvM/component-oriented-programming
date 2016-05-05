@@ -1,6 +1,6 @@
 ﻿namespace ReportBuilder
 {
-    partial class ReportBuilder
+    partial class ProductReportBuilder
     {
         /// <summary>
         /// Обязательная переменная конструктора.
